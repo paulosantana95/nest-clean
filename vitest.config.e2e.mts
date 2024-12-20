@@ -1,11 +1,11 @@
 import swc from 'unplugin-swc'
-import { defineConfig } from 'vitest/config'
+import { configDefaults, defineConfig } from 'vitest/config'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   test: {
     include: ['**/*.e2e-spec.ts'],
-    exclude: ['./data'],
+    exclude: [...configDefaults.exclude, './data'],
     globals: true,
     root: './',
     setupFiles: ['./test/setup-e2e.ts'],
