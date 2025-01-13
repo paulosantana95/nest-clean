@@ -32,7 +32,7 @@ describe('Fetch recente questions (E2E)', () => {
       },
     })
 
-    const accessToken = jwt.sign({ sub: user.id })
+    const accessToken = jwt.sign({ sub: user.id.toString() })
 
     await prisma.question.createMany({
       data: [
@@ -40,13 +40,13 @@ describe('Fetch recente questions (E2E)', () => {
           title: 'Question 01',
           content: 'Question 01 content',
           slug: 'question-1',
-          authorId: user.id,
+          authorId: user.id.toString(),
         },
         {
           title: 'Question 02',
           content: 'Question 02 content',
           slug: 'question-2',
-          authorId: user.id,
+          authorId: user.id.toString(),
         },
       ],
     })
