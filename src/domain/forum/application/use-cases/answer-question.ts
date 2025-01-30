@@ -9,8 +9,8 @@ import { Injectable } from '@nestjs/common'
 interface AnswerQuestionUseCaseRequest {
   authorId: string
   questionId: string
-  attachmentsIds: string[]
   content: string
+  attachmentsIds: string[]
 }
 
 type AnswerQuestionUseCaseResponse = Either<null, { answer: Answer }>
